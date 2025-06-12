@@ -1,11 +1,4 @@
-// ==========================================================================
-// ASTRA - Advanced JavaScript for Futuristic Interactions
-// Cyberpunk | Space-tech | Interactive Animations
-// ==========================================================================
-// Matrix Rain | Glitch Effects | Magnetic Buttons | Cursor Trails | GSAP Animations
-// ==========================================================================
 
-// === GLOBAL VARIABLES ===
 let isAudioPlaying = false;
 let currentCursor = { x: 0, y: 0 };
 let matrixCanvas, matrixCtx;
@@ -22,12 +15,12 @@ const aiResponses = [
     "🛰️ Space-grade technology for Earth-based solutions. Impressive, right?"
 ];
 
-// Matrix characters for rain effect
+
 const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^6*()*6^%+-/~{[|`]}";
 const binaryChars = "01";
 const glitchChars = "!@#$%^6*()_+-=[]{}|;:,.<>?";
 
-// === LOADING SCREEN ===
+
 class LoadingScreen {
     constructor() {
         this.loader = document.getElementById('loader');
@@ -35,12 +28,10 @@ class LoadingScreen {
     }
 
     init() {
-        // Simulate loading time
         setTimeout(() => {
             this.hideLoader();
         }, 3500);
         
-        // Add some glitch effects during loading
         this.addGlitchEffects();
     }
 
@@ -66,7 +57,7 @@ class LoadingScreen {
     }
 
     initMainAnimations() {
-        // Start particles and other animations
+       
         new ParticleSystem();
         new NavigationController();
         new ScrollAnimations();
@@ -82,7 +73,6 @@ class LoadingScreen {
     }
 }
 
-// === CUSTOM CURSOR ===
 class CursorController {
     constructor() {
         this.cursor = document.querySelector('body::before');
@@ -94,12 +84,10 @@ class CursorController {
             currentCursor.x = e.clientX;
             currentCursor.y = e.clientY;
             
-            // Update cursor position with CSS custom properties
             document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
             document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
         });
 
-        // Add cursor effects for interactive elements
         document.querySelectorAll('button, a, .tech-card').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 document.body.style.cursor = 'none';
@@ -3591,7 +3579,7 @@ class EnhancedAboutController {
                 card.setAttribute('data-animated', 'true');
                 
                 let currentValue = 0;
-                const increment = targetValue / 60; // 60 frames for smooth animation
+                const increment = targetValue / 60; 
                 
                 const updateNumber = () => {
                     currentValue += increment;
@@ -3622,7 +3610,6 @@ class EnhancedAboutController {
     }
 
     triggerStatCardEffect(card, index) {
-        // Card pulse effect
         gsap.to(card, {
             scale: 1.05,
             duration: 0.2,
@@ -3631,7 +3618,6 @@ class EnhancedAboutController {
             ease: 'power2.inOut'
         });
 
-        // Number flash effect
         const statNumber = card.querySelector('.stat-number');
         gsap.to(statNumber, {
             textShadow: '0 0 30px rgba(0, 255, 255, 1)',
@@ -3640,13 +3626,10 @@ class EnhancedAboutController {
             repeat: 1
         });
 
-        // Create particle burst
         this.createStatParticleBurst(card);
         
-        // Play click sound
         this.playClickSound();
         
-        // Show stat details
         this.showStatDetails(index);
     }
 
@@ -3753,7 +3736,6 @@ class EnhancedAboutController {
     }
 
     initHolographicCore() {
-        // Add interactive effects to data nodes
         this.dataNodes.forEach((node, index) => {
             node.addEventListener('click', () => {
                 this.triggerNodeEffect(node, index);
@@ -3776,7 +3758,6 @@ class EnhancedAboutController {
             });
         });
 
-        // Core pulsing effect
         const astraCore = document.querySelector('.astra-core');
         if (astraCore) {
             setInterval(() => {
@@ -3795,7 +3776,6 @@ class EnhancedAboutController {
         const nodeTypes = ['AI Systems', 'Robotics', 'Space Tech', 'Quantum'];
         const nodeType = nodeTypes[index] || 'Technology';
 
-        // Node explosion effect
         gsap.to(node, {
             scale: 2,
             duration: 0.3,
@@ -3804,10 +3784,8 @@ class EnhancedAboutController {
             ease: 'power2.inOut'
         });
 
-        // Create connection lines
         this.createConnectionLines(node);
         
-        // Show node information
         this.showNodeInfo(nodeType);
     }
 
@@ -3816,7 +3794,6 @@ class EnhancedAboutController {
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 
-        // Create 4 connection lines radiating outward
         for (let i = 0; i < 4; i++) {
             const line = document.createElement('div');
             line.style.cssText = `
@@ -3853,7 +3830,6 @@ class EnhancedAboutController {
     }
 
     initScrollAnimations() {
-        // Staggered entrance animations
         gsap.fromTo('.story-card', 
             { opacity: 0, x: -100, rotationY: -90 },
             {
@@ -3870,7 +3846,6 @@ class EnhancedAboutController {
             }
         );
 
-        // Holographic core entrance
         gsap.fromTo('.holographic-core',
             { opacity: 0, scale: 0.5, rotationY: 180 },
             {
@@ -3886,7 +3861,6 @@ class EnhancedAboutController {
             }
         );
 
-        // Stats matrix entrance
         gsap.fromTo('.stats-matrix',
             { opacity: 0, y: 100, scale: 0.8 },
             {
@@ -3904,7 +3878,6 @@ class EnhancedAboutController {
     }
 
     initInteractiveElements() {
-        // Achievement badge interactions
         this.achievementBadges.forEach((badge, index) => {
             badge.addEventListener('click', () => {
                 this.triggerAchievementEffect(badge, index);
@@ -3913,7 +3886,6 @@ class EnhancedAboutController {
     }
 
     triggerAchievementEffect(badge, index) {
-        // Badge glow effect
         gsap.to(badge, {
             boxShadow: '0 0 50px rgba(255, 170, 0, 1)',
             duration: 0.5,
@@ -3921,10 +3893,8 @@ class EnhancedAboutController {
             repeat: 1
         });
 
-        // Achievement sound
         this.playAchievementSound();
 
-        // Show achievement details
         const achievements = [
             "🤝 Strategic partnership with Hack Club USA - Global network access!",
             "💡 Innovation Award - Recognized for breakthrough contributions!",
