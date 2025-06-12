@@ -1,9 +1,4 @@
-/* ==========================================================================
-   ASTRA - Futuristic Website Styles
-   Cyberpunk | Space-tech | Glassmorphism | Neon Effects
-   ========================================================================== */
 
-/* === RESET & BASE === */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +19,6 @@ body {
     cursor: none;
 }
 
-/* Custom Cursor */
 body::before {
     content: '';
     position: fixed;
@@ -45,7 +39,6 @@ body::before {
     to { box-shadow: 0 0 40px #ff00ff, 0 0 60px #00ffff; }
 }
 
-/* === UTILITY CLASSES === */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -285,7 +278,6 @@ body::before {
     transition: all 0.3s ease;
 }
 
-/* === CYBERPUNK HERO SECTION === */
 .hero {
     position: relative;
     height: 100vh;
@@ -296,7 +288,6 @@ body::before {
     background: radial-gradient(ellipse at center, #0a0a0a 0%, #000014 50%, #000000 100%);
 }
 
-/* Matrix Rain Effect */
 .matrix-rain {
     position: absolute;
     top: 0;
@@ -6085,9 +6076,7 @@ body::before {
     transform: translateY(-2px);
 }
 
-/* EPIC KEYFRAME ANIMATIONS */
 
-/* Matrix Rain Animation */
 @keyframes matrixRain {
     0% { transform: translateY(-50px); }
     100% { transform: translateY(50px); }
@@ -6109,13 +6098,11 @@ body::before {
     100% { opacity: 0.6; }
 }
 
-/* Neural Network Spin */
 @keyframes neuralSpin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* Data Flow */
 @keyframes dataFlow {
     0% { 
         transform: translateY(-20px) translateX(0);
@@ -6137,7 +6124,6 @@ body::before {
     }
 }
 
-/* Energy Beam */
 @keyframes energyBeam {
     0% { 
         opacity: 0;
@@ -6161,7 +6147,6 @@ body::before {
     }
 }
 
-/* Circuit Flow */
 @keyframes circuitFlow {
     0% { 
         background-position: 0 0, 0 0, 0 0, 0 0;
@@ -6171,7 +6156,6 @@ body::before {
     }
 }
 
-/* Holographic Float */
 @keyframes holoFloat {
     0%, 100% { 
         transform: translateY(0) scale(1);
@@ -6191,7 +6175,6 @@ body::before {
     }
 }
 
-/* Quantum Particle Movement */
 @keyframes quantumMove {
     0% { 
         transform: translate(0, 0) scale(1);
@@ -6221,13 +6204,11 @@ body::before {
     }
 }
 
-/* Scan Lines */
 @keyframes scanMove {
     0% { transform: translateY(0); }
     100% { transform: translateY(20px); }
 }
 
-/* Original animations (kept for compatibility) */
 @keyframes matrixShift {
     0%, 100% { transform: translateX(0) translateY(0); }
     25% { transform: translateX(10px) translateY(-10px); }
@@ -6309,7 +6290,6 @@ body::before {
     100% { background-position: 100% 100%; }
 }
 
-/* Responsive Design for Clubs */
 @media (max-width: 768px) {
     .clubs {
         padding: 80px 0;
