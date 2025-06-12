@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra - Powering the Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="logo-loader">
+                <span class="logo-text glitch" data-text="ASTRA">ASTRA</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Initializing Future...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">ASTRA</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#technologies" class="nav-link">Tech</a></li>
+                <li><a href="#clubs" class="nav-link">Clubs</a></li>
+                <li><a href="#ai" class="nav-link">AI + You</a></li>
+                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="soundToggle" class="sound-btn">
+                    <span class="sound-icon">🔊</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Matrix Rain Background -->
+        <div class="matrix-rain" id="matrixRain"></div>
+        
+        <!-- Particles System -->
+        <div id="particles-js"></div>
+        
+        <!-- Animated Grid Background -->
+        <div class="neon-grid"></div>
+        
+        <!-- Light Sweep Effect -->
+        <div class="light-sweep"></div>
+        
+        <!-- Video Background -->
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="https://player.vimeo.com/external/372467553.hd.mp4?s=79bac0f4ad6ecb14eb8fefb4b36b9b7b8dd2c824&profile_id=175" type="video/mp4">
+            </video>
+        </div>
+        
+        <!-- Overlay Shader -->
+        <div class="hero-overlay">
+            <div class="animated-gradient"></div>
+        </div>
+        
+        <!-- Floating Tech Elements -->
+        <div class="floating-elements">
+            <div class="tech-orb orb-1"></div>
+            <div class="tech-orb orb-2"></div>
+            <div class="tech-orb orb-3"></div>
+            <div class="hologram-chip chip-1"></div>
+            <div class="hologram-chip chip-2"></div>
+            <div class="satellite satellite-1"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="hero-content">
+            <!-- 3D ASTRA Logo -->
+            <div class="logo-3d">
+                <div class="holographic-logo">
+                    <span class="logo-layer layer-1" data-text="ASTRA">ASTRA</span>
+                    <span class="logo-layer layer-2" data-text="ASTRA">ASTRA</span>
+                    <span class="logo-layer layer-3" data-text="ASTRA">ASTRA</span>
+                </div>
+            </div>
+            
+            <div class="hero-text">
+                <!-- Main Headline with Glitch Effect -->
+                <h1 class="hero-title">
+                    <span class="glitch-text welcome-text" data-text="🔮 Welcome to">🔮 Welcome to</span>
+                    <span class="glitch-text main-title" data-text="ASTRA">ASTRA</span>
+                    <div class="scanline-effect"></div>
+                </h1>
+                
+                <!-- Animated Subheading -->
+                <div class="hero-subtitle-container">
+                    <p class="hero-subtitle typewriter-effect">
+                        <span class="floating-text">Where Curiosity Becomes Code.</span>
+                        <span class="pipe-separator">|</span>
+                        <span class="floating-text powered-by">Powered by Hack Club USA.</span>
+                    </p>
+                </div>
+                
+                <!-- CTA Button with Magnetic Effect -->
+                <div class="hero-cta">
+                    <button class="btn-future magnetic-btn">
+                        <span class="btn-content">
+                            <span class="rocket-icon">🚀</span>
+                            <span class="btn-text">Enter the Future</span>
+                        </span>
+                        <div class="btn-ripple"></div>
+                        <div class="btn-glow-effect"></div>
+                        <div class="btn-border-animation"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Advanced Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="data-transmission">
+                <div class="transmission-line"></div>
+                <div class="data-packets">
+                    <div class="packet"></div>
+                    <div class="packet"></div>
+                    <div class="packet"></div>
+                </div>
+            </div>
+            <div class="scroll-arrow pulse-animation"></div>
+            <span class="scroll-text glowing-text">Initialize exploration</span>
+        </div>
+        
+        <!-- Cursor Trail Effect -->
+        <div class="cursor-trail" id="cursorTrail"></div>
+    </section>
+
+    <!-- Enhanced About Section -->
+    <section id="about" class="about-enhanced">
+        <!-- Epic Background Effects -->
+        <div class="about-bg-effects">
+            <div class="dna-helix"></div>
+            <div class="neural-particles"></div>
+            <div class="quantum-waves"></div>
+            <div class="code-rain"></div>
+            <div class="energy-fields"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title glitch-title" data-text="🧬 Who We Are - The Future Architects">🧬 Who We Are - The Future Architects</h2>
+                <div class="section-line">
+                    <div class="energy-beam"></div>
+                </div>
+                <p class="section-subtitle typewriter-subtitle">Decoding our DNA... Initializing identity matrix...</p>
+            </div>
+            
+            <div class="about-enhanced-content">
+                <!-- Left: Story & Mission -->
+                <div class="about-story">
+                    <!-- Interactive Story Cards -->
+                    <div class="story-cards">
+                        <div class="story-card active" data-story="origin">
+                            <div class="card-glow-aura"></div>
+                            <div class="card-content">
+                                <div class="story-icon">
+                                    <div class="icon-pulse">🚀</div>
+                                </div>
+                                <h3 class="story-title">Origin Story</h3>
+                                <div class="story-text typing-reveal">
+                                    <p>Born from the convergence of brilliant minds at Hack Club USA, ASTRA represents the next evolution of student-driven innovation. We're not just building tech - we're architecting the future itself.</p>
+                                </div>
+                            </div>
+                            <div class="card-data-stream"></div>
+                        </div>
+                        
+                        <div class="story-card" data-story="mission">
+                            <div class="card-glow-aura"></div>
+                            <div class="card-content">
+                                <div class="story-icon">
+                                    <div class="icon-pulse">⚡</div>
+                                </div>
+                                <h3 class="story-title">Mission Protocol</h3>
+                                <div class="story-text typing-reveal">
+                                    <p>To democratize cutting-edge technology and empower the next generation of innovators. We bridge the gap between imagination and implementation, turning wild ideas into world-changing reality.</p>
+                                </div>
+                            </div>
+                            <div class="card-data-stream"></div>
+                        </div>
+                        
+                        <div class="story-card" data-story="vision">
+                            <div class="card-glow-aura"></div>
+                            <div class="card-content">
+                                <div class="story-icon">
+                                    <div class="icon-pulse">🌟</div>
+                                </div>
+                                <h3 class="story-title">Vision 2030</h3>
+                                <div class="story-text typing-reveal">
+                                    <p>A world where every curious mind has access to AI, robotics, and space technology. We're building the global neural network of tomorrow's innovators, one breakthrough at a time.</p>
+                                </div>
+                            </div>
+                            <div class="card-data-stream"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Navigation -->
+                    <div class="story-nav">
+                        <button class="nav-dot active" data-target="origin">
+                            <span class="dot-label">Origin</span>
+                        </button>
+                        <button class="nav-dot" data-target="mission">
+                            <span class="dot-label">Mission</span>
+                        </button>
+                        <button class="nav-dot" data-target="vision">
+                            <span class="dot-label">Vision</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right: Interactive Stats & Hologram -->
+                <div class="about-interactive">
+                    <!-- 3D Holographic Core -->
+                    <div class="holographic-core">
+                        <div class="core-container">
+                            <!-- Central ASTRA Core -->
+                            <div class="astra-core">
+                                <div class="core-inner">
+                                    <span class="core-text">ASTRA</span>
+                                </div>
+                                <div class="core-rings">
+                                    <div class="ring ring-1"></div>
+                                    <div class="ring ring-2"></div>
+                                    <div class="ring ring-3"></div>
+                                    <div class="ring ring-4"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating Data Nodes -->
+                            <div class="data-nodes">
+                                <div class="data-node node-ai" data-stat="ai">
+                                    <span class="node-icon">🤖</span>
+                                    <span class="node-label">AI Systems</span>
+                                </div>
+                                <div class="data-node node-robotics" data-stat="robotics">
+                                    <span class="node-icon">⚙️</span>
+                                    <span class="node-label">Robotics</span>
+                                </div>
+                                <div class="data-node node-space" data-stat="space">
+                                    <span class="node-icon">🚀</span>
+                                    <span class="node-label">Space Tech</span>
+                                </div>
+                                <div class="data-node node-quantum" data-stat="quantum">
+                                    <span class="node-icon">⚛️</span>
+                                    <span class="node-label">Quantum</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Connection Lines -->
+                            <div class="neural-connections">
+                                <div class="connection-line line-1"></div>
+                                <div class="connection-line line-2"></div>
+                                <div class="connection-line line-3"></div>
+                                <div class="connection-line line-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Stats Display -->
+                    <div class="stats-matrix">
+                        <div class="matrix-header">
+                            <h3 class="matrix-title">📊 ASTRA Analytics Matrix</h3>
+                            <div class="matrix-status">
+                                <div class="status-dot active-pulse"></div>
+                                <span>LIVE DATA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card clickable" data-stat="founded">
+                                <div class="stat-icon">📅</div>
+                                <div class="stat-display">
+                                    <span class="stat-number" data-target="2025">0</span>
+                                    <span class="stat-label">Founded</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" data-progress="100"></div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                            
+                            <div class="stat-card clickable" data-stat="members">
+                                <div class="stat-icon">👥</div>
+                                <div class="stat-display">
+                                    <span class="stat-number" data-target="127">0</span>
+                                    <span class="stat-label">Active Members</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" data-progress="85"></div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                            
+                            <div class="stat-card clickable" data-stat="projects">
+                                <div class="stat-icon">🛠️</div>
+                                <div class="stat-display">
+                                    <span class="stat-number" data-target="43">0</span>
+                                    <span class="stat-label">Active Projects</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" data-progress="72"></div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                            
+                            <div class="stat-card clickable" data-stat="code">
+                                <div class="stat-icon">💻</div>
+                                <div class="stat-display">
+                                    <span class="stat-number" data-target="1250000">0</span>
+                                    <span class="stat-label">Lines of Code</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" data-progress="95"></div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                            
+                            <div class="stat-card clickable" data-stat="ai">
+                                <div class="stat-icon">🤖</div>
+                                <div class="stat-display">
+                                    <span class="stat-number" data-target="67">0</span>
+                                    <span class="stat-label">AI Models</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" data-progress="88"></div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                            
+                            <div class="stat-card clickable" data-stat="innovation">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-display">
+                                    <span class="stat-number" data-target="99">0</span>
+                                    <span class="stat-label">Innovation Index</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" data-progress="99"></div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Achievement Badges -->
+                        <div class="achievement-showcase">
+                            <h4 class="showcase-title">🏆 Recent Achievements</h4>
+                            <div class="badges-container">
+                                <div class="achievement-badge" data-achievement="hackclub">
+                                    <div class="badge-icon">🤝</div>
+                                    <span class="badge-text">Hack Club Partner</span>
+                                    <div class="badge-shine"></div>
+                                </div>
+                                <div class="achievement-badge" data-achievement="innovation">
+                                    <div class="badge-icon">💡</div>
+                                    <span class="badge-text">Innovation Award</span>
+                                    <div class="badge-shine"></div>
+                                </div>
+                                <div class="achievement-badge" data-achievement="community">
+                                    <div class="badge-icon">🌟</div>
+                                    <span class="badge-text">Community Leader</span>
+                                    <div class="badge-shine"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Clubs & HODs Section -->
+    <section id="clubs" class="clubs">
+        <div class="clubs-bg-effects">
+            <!-- Digital Matrix Rain -->
+            <div class="digital-matrix"></div>
+            
+            <!-- Cyber Grid -->
+            <div class="cyber-grid"></div>
+            
+            <!-- Neural Network -->
+            <div class="neural-network"></div>
+            
+            <!-- Floating Data Packets -->
+            <div class="floating-particles">
+                <div class="data-packet"></div>
+                <div class="data-packet"></div>
+                <div class="data-packet"></div>
+                <div class="data-packet"></div>
+                <div class="data-packet"></div>
+                <div class="data-packet"></div>
+            </div>
+            
+            <!-- Energy Beams -->
+            <div class="energy-beams">
+                <div class="energy-beam beam-1"></div>
+                <div class="energy-beam beam-2"></div>
+                <div class="energy-beam beam-3"></div>
+            </div>
+            
+            <!-- Circuit Pathways -->
+            <div class="circuit-pathways"></div>
+            
+            <!-- Holographic Projections -->
+            <div class="holo-projections">
+                <div class="holo-projection holo-1"></div>
+                <div class="holo-projection holo-2"></div>
+                <div class="holo-projection holo-3"></div>
+                <div class="holo-projection holo-4"></div>
+            </div>
+            
+            <!-- Quantum Particles -->
+            <div class="quantum-field">
+                <div class="quantum-particle particle-1"></div>
+                <div class="quantum-particle particle-2"></div>
+                <div class="quantum-particle particle-3"></div>
+                <div class="quantum-particle particle-4"></div>
+                <div class="quantum-particle particle-5"></div>
+            </div>
+            
+            <!-- Scanning Lines -->
+            <div class="scan-lines"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title glitch-title" data-text="🔱 Clubs & HODs – The Force Behind ASTRA">🔱 Clubs & HODs – The Force Behind ASTRA</h2>
+                <div class="section-line">
+                    <div class="energy-beam"></div>
+                </div>
+                <p class="section-subtitle typewriter-subtitle">Elite teams powering ASTRA's technological supremacy...</p>
+            </div>
+            
+            <div class="clubs-grid">
+                <div class="club-card hack-club" data-club="hack">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-hologram"></div>
+                    <div class="card-content">
+                        <div class="club-icon-container">
+                            <div class="icon-orbit">
+                                <span class="club-icon">🚀</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="club-name">Hack Club</h3>
+                        <div class="hod-container">
+                            <span class="hod-label">HOD:</span>
+                            <div class="hod-display">
+                                <span class="led-text typing-animation" data-text="Himanshu"></span>
+                                <span class="led-cursor">|</span>
+                            </div>
+                        </div>
+                        <div class="card-tech-grid">
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                        </div>
+                    </div>
+                    <div class="card-border-animation"></div>
+                </div>
+                
+                <div class="club-card aerospace-club" data-club="aerospace">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-hologram"></div>
+                    <div class="card-content">
+                        <div class="club-icon-container">
+                            <div class="icon-orbit">
+                                <span class="club-icon">✈️</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="club-name">Aerospace Club</h3>
+                        <div class="hod-container">
+                            <span class="hod-label">HOD:</span>
+                            <div class="hod-display">
+                                <span class="led-text typing-animation" data-text="Aditya"></span>
+                                <span class="led-cursor">|</span>
+                            </div>
+                        </div>
+                        <div class="card-tech-grid">
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                        </div>
+                    </div>
+                    <div class="card-border-animation"></div>
+                </div>
+                
+                <div class="club-card robotics-club" data-club="robotics">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-hologram"></div>
+                    <div class="card-content">
+                        <div class="club-icon-container">
+                            <div class="icon-orbit">
+                                <span class="club-icon">🤖</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="club-name">Robotics Club</h3>
+                        <div class="hod-container">
+                            <span class="hod-label">HOD:</span>
+                            <div class="hod-display">
+                                <span class="led-text typing-animation" data-text="Anirudh"></span>
+                                <span class="led-cursor">|</span>
+                            </div>
+                        </div>
+                        <div class="card-tech-grid">
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                        </div>
+                    </div>
+                    <div class="card-border-animation"></div>
+                </div>
+                
+                <div class="club-card ignite-club" data-club="ignite">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-hologram"></div>
+                    <div class="card-content">
+                        <div class="club-icon-container">
+                            <div class="icon-orbit">
+                                <span class="club-icon">🔥</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="club-name">Ignite Club</h3>
+                        <div class="hod-container">
+                            <span class="hod-label">HOD:</span>
+                            <div class="hod-display">
+                                <span class="led-text typing-animation none-text" data-text="None"></span>
+                                <span class="led-cursor">|</span>
+                            </div>
+                        </div>
+                        <div class="card-tech-grid">
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                        </div>
+                    </div>
+                    <div class="card-border-animation"></div>
+                </div>
+                
+                <div class="club-card ai-club" data-club="ai">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-hologram"></div>
+                    <div class="card-content">
+                        <div class="club-icon-container">
+                            <div class="icon-orbit">
+                                <span class="club-icon">🧠</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="club-name">AI Club</h3>
+                        <div class="hod-container">
+                            <span class="hod-label">HOD:</span>
+                            <div class="hod-display">
+                                <span class="led-text typing-animation" data-text="Abhijay"></span>
+                                <span class="led-cursor">|</span>
+                            </div>
+                        </div>
+                        <div class="card-tech-grid">
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                        </div>
+                    </div>
+                    <div class="card-border-animation"></div>
+                </div>
+                
+                <div class="club-card coding-club" data-club="coding">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-hologram"></div>
+                    <div class="card-content">
+                        <div class="club-icon-container">
+                            <div class="icon-orbit">
+                                <span class="club-icon">💻</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="club-name">Coding Club</h3>
+                        <div class="hod-container">
+                            <span class="hod-label">HOD:</span>
+                            <div class="hod-display">
+                                <span class="led-text typing-animation none-text" data-text="None"></span>
+                                <span class="led-cursor">|</span>
+                            </div>
+                        </div>
+                        <div class="card-tech-grid">
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                            <div class="tech-dot"></div>
+                        </div>
+                    </div>
+                    <div class="card-border-animation"></div>
+                </div>
+            </div>
+            
+            <div class="clubs-controls">
+                <button class="club-filter active" data-filter="all">All Clubs</button>
+                <button class="club-filter" data-filter="active">Active HODs</button>
+                <button class="club-filter" data-filter="recruiting">Recruiting</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Technologies - Coming Soon Section -->
+    <section id="technologies" class="technologies-coming-soon">
+        <!-- Cyberpunk Background Effects -->
+        <div class="tech-bg-effects">
+            <div class="matrix-particles"></div>
+            <div class="circuit-pathways"></div>
+            <div class="neon-grid"></div>
+            <div class="quantum-field"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title glitch-title" data-text="🛠️ Our Technologies – Coming Soon">🛠️ Our Technologies – Coming Soon</h2>
+                <div class="section-line">
+                    <div class="energy-beam"></div>
+                </div>
+                <p class="section-subtitle typewriter-subtitle">Initializing next-generation technology stack...</p>
+            </div>
+            
+            <div class="tech-grid-coming">
+                <!-- AI Technology Card -->
+                <div class="tech-card-coming" data-tech="ai">
+                    <div class="card-hologram"></div>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-content">
+                        <div class="tech-icon-container">
+                            <div class="icon-orbit">
+                                <span class="tech-icon">🤖</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tech-title">AI</h3>
+                        <div class="launch-status">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span class="status-text">🔒 Launching Soon...</span>
+                            </div>
+                        </div>
+                        <div class="tech-specs">
+                            <div class="spec-line">Neural Networks</div>
+                            <div class="spec-line">Machine Learning</div>
+                            <div class="spec-line">Deep Learning</div>
+                        </div>
+                    </div>
+                    <div class="scan-line"></div>
+                </div>
+                
+                <!-- Robotics Technology Card -->
+                <div class="tech-card-coming" data-tech="robotics">
+                    <div class="card-hologram"></div>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-content">
+                        <div class="tech-icon-container">
+                            <div class="icon-orbit">
+                                <span class="tech-icon">⚙️</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tech-title">Robotics</h3>
+                        <div class="launch-status">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span class="status-text">🔒 Launching Soon...</span>
+                            </div>
+                        </div>
+                        <div class="tech-specs">
+                            <div class="spec-line">Autonomous Systems</div>
+                            <div class="spec-line">Motion Control</div>
+                            <div class="spec-line">Smart Automation</div>
+                        </div>
+                    </div>
+                    <div class="scan-line"></div>
+                </div>
+                
+                <!-- Embedded Systems Technology Card -->
+                <div class="tech-card-coming" data-tech="embedded">
+                    <div class="card-hologram"></div>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-content">
+                        <div class="tech-icon-container">
+                            <div class="icon-orbit">
+                                <span class="tech-icon">🔌</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tech-title">Embedded Systems</h3>
+                        <div class="launch-status">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span class="status-text">🔒 Launching Soon...</span>
+                            </div>
+                        </div>
+                        <div class="tech-specs">
+                            <div class="spec-line">IoT Devices</div>
+                            <div class="spec-line">Microcontrollers</div>
+                            <div class="spec-line">Real-time Systems</div>
+                        </div>
+                    </div>
+                    <div class="scan-line"></div>
+                </div>
+                
+                <!-- Cybersecurity Technology Card -->
+                <div class="tech-card-coming" data-tech="cybersecurity">
+                    <div class="card-hologram"></div>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-content">
+                        <div class="tech-icon-container">
+                            <div class="icon-orbit">
+                                <span class="tech-icon">🛡️</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tech-title">Cybersecurity</h3>
+                        <div class="launch-status">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span class="status-text">🔒 Launching Soon...</span>
+                            </div>
+                        </div>
+                        <div class="tech-specs">
+                            <div class="spec-line">Threat Detection</div>
+                            <div class="spec-line">Data Protection</div>
+                            <div class="spec-line">Security Analytics</div>
+                        </div>
+                    </div>
+                    <div class="scan-line"></div>
+                </div>
+                
+                <!-- Web3 Technology Card -->
+                <div class="tech-card-coming" data-tech="web3">
+                    <div class="card-hologram"></div>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-content">
+                        <div class="tech-icon-container">
+                            <div class="icon-orbit">
+                                <span class="tech-icon">🌐</span>
+                                <div class="orbit-rings">
+                                    <div class="orbit-ring ring-1"></div>
+                                    <div class="orbit-ring ring-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tech-title">Web3</h3>
+                        <div class="launch-status">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span class="status-text">🔒 Launching Soon...</span>
+                            </div>
+                        </div>
+                        <div class="tech-specs">
+                            <div class="spec-line">Blockchain Tech</div>
+                            <div class="spec-line">Smart Contracts</div>
+                            <div class="spec-line">Decentralized Apps</div>
+                        </div>
+                    </div>
+                    <div class="scan-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced AI + You Section -->
+    <section id="ai" class="ai-section-enhanced">
+        <!-- Sci-Fi Background Effects -->
+        <div class="ai-bg-effects">
+            <div class="ai-particles"></div>
+            <div class="neural-network-bg"></div>
+            <div class="data-streams"></div>
+            <div class="holographic-grid"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title glitch-title" data-text="🤖 AI + You">🤖 AI + You</h2>
+                <div class="section-line">
+                    <div class="energy-beam"></div>
+                </div>
+                <p class="section-subtitle typewriter-subtitle">Chat with our AI assistant and bring your ideas to life.</p>
+            </div>
+            
+            <div class="ai-enhanced-content">
+                <!-- 3D Futuristic Chat Terminal -->
+                <div class="ai-terminal-3d">
+                    <div class="terminal-frame">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="control-dot control-close"></div>
+                                <div class="control-dot control-minimize"></div>
+                                <div class="control-dot control-maximize"></div>
+                            </div>
+                            <div class="terminal-title">
+                                <span class="glitch-text" data-text="ASTRA AI TERMINAL">ASTRA AI TERMINAL</span>
+                            </div>
+                            <div class="terminal-status">
+                                <div class="status-indicator online">
+                                    <div class="status-dot"></div>
+                                    <span>ONLINE</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="terminal-content">
+                            <div class="welcome-message">
+                                <div class="message-timestamp">[2025-06-12 10:47:01] SYSTEM:</div>
+                                <div class="ai-welcome">
+                                    <span class="typing-animation" data-text="🤖 ASTRA AI: Hello Tinkerer. What would you like to build today?">🤖 ASTRA AI: Hello Tinkerer. What would you like to build today?</span>
+                                    <span class="terminal-cursor">_</span>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-container" id="enhancedChatContainer">
+                                <!-- Messages will be dynamically added here -->
+                            </div>
+                        </div>
+                        
+                        <div class="terminal-input-area">
+                            <div class="input-line">
+                                <span class="prompt">user@astra:~$ </span>
+                                <input type="text" id="enhancedChatInput" class="terminal-input" placeholder="Type your message...">
+                                <button id="enhancedSendMessage" class="send-btn-enhanced">
+                                    <span class="btn-icon">🚀</span>
+                                    <span class="btn-text">Send</span>
+                                    <div class="btn-glow"></div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="terminal-footer">
+                            <div class="system-info">
+                                <span class="cpu-usage">CPU: <span class="metric-value">23%</span></span>
+                                <span class="memory-usage">MEM: <span class="metric-value">45%</span></span>
+                                <span class="connection-status">NET: <span class="metric-value online-status">CONNECTED</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terminal Glow Effects -->
+                    <div class="terminal-glow-outer"></div>
+                    <div class="terminal-scan-lines"></div>
+                </div>
+                
+                <!-- AI Features Panel -->
+                <div class="ai-features-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">AI CAPABILITIES</h3>
+                        <div class="panel-status">
+                            <div class="status-dot active"></div>
+                            <span>ACTIVE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card" data-feature="code">
+                            <div class="feature-icon">💻</div>
+                            <div class="feature-title">Code Generation</div>
+                            <div class="feature-description">AI-powered code assistance</div>
+                        </div>
+                        
+                        <div class="feature-card" data-feature="analysis">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-title">Data Analysis</div>
+                            <div class="feature-description">Advanced pattern recognition</div>
+                        </div>
+                        
+                        <div class="feature-card" data-feature="design">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-title">Design Concepts</div>
+                            <div class="feature-description">Creative solution generation</div>
+                        </div>
+                        
+                        <div class="feature-card" data-feature="research">
+                            <div class="feature-icon">🔬</div>
+                            <div class="feature-title">Research Assistant</div>
+                            <div class="feature-description">Technical documentation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Projects Section -->
+    <section id="roadmap" class="future-projects">
+        <!-- Animated Background -->
+        <div class="future-bg-effects">
+            <div class="stars-field"></div>
+            <div class="circuit-grid"></div>
+            <div class="space-particles"></div>
+            <div class="ai-neural-network"></div>
+        </div>
+        
+        <div class="container">
+            <!-- Futuristic Header -->
+            <div class="section-header">
+                <h1 class="future-title glitch-neon" data-text="🚀 Future Projects: 2024 → 2030">
+                    🚀 Future Projects: 2024 → 2030
+                </h1>
+                <div class="title-underline">
+                    <div class="energy-beam"></div>
+                </div>
+                <p class="future-subtitle typewriter">Initializing roadmap to technological supremacy...</p>
+            </div>
+            
+            <!-- Timeline View Toggle -->
+            <div class="view-toggle">
+                <button class="toggle-btn active" data-view="timeline">Timeline View</button>
+                <button class="toggle-btn" data-view="grid">Grid View</button>
+            </div>
+            
+            <!-- Timeline Container -->
+            <div class="timeline-container timeline-view">
+                <!-- Digital Connection Lines -->
+                <div class="digital-spine">
+                    <div class="data-flow"></div>
+                </div>
+                
+                <!-- 2024 - Hack Club Partnership -->
+                <div class="timeline-card established" data-year="2024" data-aos="slide-right">
+                    <div class="card-glow-effect"></div>
+                    <div class="year-badge established-badge">
+                        <span class="year-number">2024</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="icon-orbit">
+                                <span class="icon-core">🤝</span>
+                                <div class="orbit-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Hack Club USA Partnership</h3>
+                        <p class="card-description">ASTRA collaborates with Hack Club USA to become part of a global tech force. Establishing foundation for worldwide innovation network.</p>
+                        <div class="card-tech-tags">
+                            <span class="tech-tag">Global Network</span>
+                            <span class="tech-tag">Collaboration</span>
+                            <span class="tech-tag">Innovation Hub</span>
+                        </div>
+                        <div class="status-indicator established-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">ESTABLISHED</span>
+                        </div>
+                    </div>
+                    <div class="card-connector"></div>
+                </div>
+                
+                <!-- 2025 - ASTRA Expansion -->
+                <div class="timeline-card active" data-year="2025" data-aos="slide-left">
+                    <div class="card-glow-effect"></div>
+                    <div class="year-badge active-badge">
+                        <span class="year-number">2025</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="icon-orbit">
+                                <span class="icon-core">🏆</span>
+                                <div class="orbit-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">ASTRA Expansion Era</h3>
+                        <p class="card-description">Massive expansion phase. Participating in Technoxian Robotics Competition and other major tech events. Building new teams and breakthrough inventions.</p>
+                        <div class="card-tech-tags">
+                            <span class="tech-tag">Robotics</span>
+                            <span class="tech-tag">Competitions</span>
+                            <span class="tech-tag">Team Building</span>
+                        </div>
+                        <div class="status-indicator active-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">IN PROGRESS</span>
+                        </div>
+                    </div>
+                    <div class="card-connector"></div>
+                </div>
+                
+                <!-- 2026 - Upcoming Breakthroughs -->
+                <div class="timeline-card upcoming" data-year="2026" data-aos="slide-right">
+                    <div class="card-glow-effect shimmer"></div>
+                    <div class="year-badge upcoming-badge">
+                        <span class="year-number">2026</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="icon-orbit">
+                                <span class="icon-core">🔮</span>
+                                <div class="orbit-ring shimmer-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Upcoming Breakthroughs</h3>
+                        <p class="card-description">Revolutionary innovations in AI and robotics. Advanced neural networks and autonomous systems. The future is being written...</p>
+                        <div class="card-tech-tags">
+                            <span class="tech-tag shimmer">Neural AI</span>
+                            <span class="tech-tag shimmer">Autonomous Systems</span>
+                            <span class="tech-tag shimmer">Quantum Tech</span>
+                        </div>
+                        <div class="status-indicator upcoming-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">COMING SOON</span>
+                        </div>
+                    </div>
+                    <div class="card-connector"></div>
+                </div>
+                
+                <!-- 2027 - Locked Innovations -->
+                <div class="timeline-card locked" data-year="2027" data-aos="slide-left">
+                    <div class="card-glow-effect encrypted"></div>
+                    <div class="year-badge locked-badge">
+                        <span class="year-number">2027</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="icon-orbit">
+                                <span class="icon-core">🔒</span>
+                                <div class="orbit-ring encrypted-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title encrypted-text">████████ ████████████</h3>
+                        <p class="card-description">⚡ Classified innovations in development. Advanced encryption protocols engaged. Access level: TOP SECRET.</p>
+                        <div class="card-tech-tags">
+                            <span class="tech-tag encrypted">CLASSIFIED</span>
+                            <span class="tech-tag encrypted">ENCRYPTED</span>
+                            <span class="tech-tag encrypted">TOP SECRET</span>
+                        </div>
+                        <div class="status-indicator locked-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">LOCKED</span>
+                        </div>
+                    </div>
+                    <div class="card-connector"></div>
+                </div>
+                
+                <!-- 2028 - Reserved Future -->
+                <div class="timeline-card reserved" data-year="2028" data-aos="slide-right">
+                    <div class="card-glow-effect future"></div>
+                    <div class="year-badge reserved-badge">
+                        <span class="year-number">2028</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="icon-orbit">
+                                <span class="icon-core">⚡</span>
+                                <div class="orbit-ring future-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Unlocking the Future</h3>
+                        <p class="card-description">The next phase of human-AI collaboration. Preparing for technologies that will reshape civilization itself.</p>
+                        <div class="card-tech-tags">
+                            <span class="tech-tag future">Future Tech</span>
+                            <span class="tech-tag future">Reserved</span>
+                            <span class="tech-tag future">Preparing</span>
+                        </div>
+                        <div class="status-indicator reserved-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">RESERVED</span>
+                        </div>
+                    </div>
+                    <div class="card-connector"></div>
+                </div>
+                
+                <!-- 2029 - Global Vision -->
+                <div class="timeline-card vision" data-year="2029" data-aos="slide-left">
+                    <div class="card-glow-effect global"></div>
+                    <div class="year-badge vision-badge">
+                        <span class="year-number">2029</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="icon-orbit">
+                                <span class="icon-core">🌍</span>
+                                <div class="orbit-ring global-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Global AI Network</h3>
+                        <p class="card-description">Worldwide deployment of ASTRA's AI education platform. Connecting minds across continents for collaborative innovation.</p>
+                        <div class="card-tech-tags">
+                            <span class="tech-tag global">Global Network</span>
+                            <span class="tech-tag global">AI Education</span>
+                            <span class="tech-tag global">World-Scale</span>
+                        </div>
+                        <div class="status-indicator vision-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">VISION</span>
+                        </div>
+                    </div>
+                    <div class="card-connector"></div>
+                </div>
+                
+                <!-- 2030 - Ultimate Vision -->
+                <div class="timeline-card ultimate" data-year="2030" data-aos="slide-right">
+                    <div class="card-glow-effect ultimate-glow"></div>
+                    <div class="year-badge ultimate-badge">
+                        <span class="year-number">2030</span>
+                        <div class="badge-pulse"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <div class="icon-orbit">
+                                <span class="icon-core">👑</span>
+                                <div class="orbit-ring ultimate-ring"></div>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Vision 2030: AI Leadership</h3>
+                        <p class="card-description">ASTRA emerges as the global leader in AI + Robotics education. Shaping the next generation of technological innovators worldwide.</p>
+                        <div class="card-tech-tags">
+                            <span class="tech-tag ultimate">Global Leader</span>
+                            <span class="tech-tag ultimate">AI Education</span>
+                            <span class="tech-tag ultimate">World Impact</span>
+                        </div>
+                        <div class="status-indicator ultimate-status">
+                            <span class="status-dot blinking-cursor"></span>
+                            <span class="status-text">DESTINY_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid View (Hidden by default) -->
+            <div class="grid-container grid-view" style="display: none;">
+                <div class="future-grid">
+                    <div class="grid-card established" data-year="2024">
+                        <div class="grid-year">2024</div>
+                        <div class="grid-icon">🤝</div>
+                        <div class="grid-title">Hack Club Partnership</div>
+                    </div>
+                    <div class="grid-card active" data-year="2025">
+                        <div class="grid-year">2025</div>
+                        <div class="grid-icon">🏆</div>
+                        <div class="grid-title">ASTRA Expansion</div>
+                    </div>
+                    <div class="grid-card upcoming" data-year="2026">
+                        <div class="grid-year">2026</div>
+                        <div class="grid-icon">🔮</div>
+                        <div class="grid-title">Breakthroughs</div>
+                    </div>
+                    <div class="grid-card locked" data-year="2027">
+                        <div class="grid-year">2027</div>
+                        <div class="grid-icon">🔒</div>
+                        <div class="grid-title">Classified</div>
+                    </div>
+                    <div class="grid-card reserved" data-year="2028">
+                        <div class="grid-year">2028</div>
+                        <div class="grid-icon">⚡</div>
+                        <div class="grid-title">Future Tech</div>
+                    </div>
+                    <div class="grid-card vision" data-year="2029">
+                        <div class="grid-year">2029</div>
+                        <div class="grid-icon">🌍</div>
+                        <div class="grid-title">Global Network</div>
+                    </div>
+                    <div class="grid-card ultimate" data-year="2030">
+                        <div class="grid-year">2030</div>
+                        <div class="grid-icon">👑</div>
+                        <div class="grid-title">AI Leadership</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Easter Egg Elements -->
+            <div class="easter-eggs">
+                <div class="floating-easter-egg" data-secret="quantum">⚛️</div>
+                <div class="floating-easter-egg" data-secret="neural">🧠</div>
+                <div class="floating-easter-egg" data-secret="space">🚀</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Futuristic Communication Console -->
+    <section id="contact" class="contact">
+        <!-- Animated Background Effects -->
+        <div class="contact-bg-effects">
+            <div class="circuit-board"></div>
+            <div class="space-pulse"></div>
+            <div class="floating-cubes">
+                <div class="cube cube-1"></div>
+                <div class="cube cube-2"></div>
+                <div class="cube cube-3"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Futuristic Header -->
+            <div class="section-header">
+                <h2 class="section-title glitch-title" data-text="📬 Get in Touch with ASTRA">📬 Get in Touch with ASTRA</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle typing-subtitle">Initialize communication protocol with ASTRA command center...</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- 3D Contact Information Cards -->
+                <div class="contact-cards">
+                    <!-- Email Card -->
+                    <div class="contact-card email-card" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon email-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32">
+                                    <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                                </svg>
+                            </div>
+                            <h3>Direct Email</h3>
+                            <p>hacker2.0indiaofficial@gmail.com</p>
+                            <div class="card-pulse"></div>
+                        </div>
+                        <div class="card-hologram"></div>
+                    </div>
+                    
+                    <!-- GitHub Card -->
+                    <div class="contact-card github-card" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon github-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32">
+                                    <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                                </svg>
+                            </div>
+                            <h3>Source Code</h3>
+                            <p>github.com/astra-collective</p>
+                            <div class="card-pulse"></div>
+                        </div>
+                        <div class="card-hologram"></div>
+                    </div>
+                    
+                    <!-- YouTube Card -->
+                    <div class="contact-card youtube-card" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon youtube-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32">
+                                    <path fill="currentColor" d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+                                </svg>
+                            </div>
+                            <h3>Video Content</h3>
+                            <p>youtube.com/@astra-tech</p>
+                            <div class="card-pulse"></div>
+                        </div>
+                        <div class="card-hologram"></div>
+                    </div>
+                    
+                    <!-- Location Card -->
+                    <div class="contact-card location-card" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon location-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32">
+                                    <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                </svg>
+                            </div>
+                            <h3>Physical Location</h3>
+                            <p>Sanskriti School, Delhi</p>
+                            <div class="card-pulse"></div>
+                        </div>
+                        <div class="card-hologram"></div>
+                    </div>
+                </div>
+                
+                <!-- 3D Rotating Communication Panel -->
+                <div class="communication-panel">
+                    <div class="panel-3d">
+                        <div class="panel-face panel-front">
+                            <div class="panel-header">
+                                <div class="status-indicator"></div>
+                                <span>ASTRA COMM LINK</span>
+                                <div class="signal-bars">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+                            <div class="panel-content">
+                                <div class="comm-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">STATUS</span>
+                                        <span class="stat-value online">ONLINE</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">RESPONSE</span>
+                                        <span class="stat-value">< 24H</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">ENCRYPTION</span>
+                                        <span class="stat-value secure">AES-256</span>
+                                    </div>
+                                </div>
+                                <div class="launch-button-container">
+                                    <button class="launch-message-btn" id="launchMessageBtn">
+                                        <span class="btn-icon">🚀</span>
+                                        <span class="btn-text">Launch Message to ASTRA</span>
+                                        <div class="btn-particles"></div>
+                                        <div class="btn-energy-field"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-face panel-back">
+                            <div class="hologram-display">
+                                <div class="hologram-grid"></div>
+                                <div class="hologram-text">ASTRA SYSTEMS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Modal/Popup -->
+        <div class="contact-modal" id="contactModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🚀 ASTRA Communication Terminal</h3>
+                    <button class="modal-close" id="modalClose">×</button>
+                </div>
+                <form id="contactForm" class="glitch-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Operative Name</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Secure Email Channel</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <select id="interest" required>
+                            <option value="">Mission Type</option>
+                            <option value="collaboration">Collaboration Request</option>
+                            <option value="partnership">Strategic Partnership</option>
+                            <option value="recruitment">Join ASTRA Team</option>
+                            <option value="inquiry">General Inquiry</option>
+                        </select>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" required placeholder="Transmit your message to ASTRA command..."></textarea>
+                        <label for="message">Encrypted Message</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>🛸 Transmit Message</span>
+                        <div class="btn-glitch"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Elements -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
