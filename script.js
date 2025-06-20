@@ -109,7 +109,6 @@ class CursorController {
     }
 }
 
-// === PARTICLE SYSTEM ===
 class ParticleSystem {
     constructor() {
         this.initParticles();
@@ -197,7 +196,6 @@ class ParticleSystem {
     }
 }
 
-// === NAVIGATION CONTROLLER ===
 class NavigationController {
     constructor() {
         this.navbar = document.getElementById('navbar');
@@ -277,7 +275,6 @@ class NavigationController {
     }
 }
 
-// === SCROLL ANIMATIONS ===
 class ScrollAnimations {
     constructor() {
         this.init();
@@ -662,20 +659,16 @@ class AudioController {
     }
 }
 
-// === PERFORMANCE OPTIMIZATIONS ===
 class PerformanceOptimizer {
     constructor() {
         this.init();
     }
 
     init() {
-        // Lazy load images
         this.lazyLoadImages();
         
-        // Debounce scroll events
         this.debounceScrollEvents();
         
-        // Preload critical resources
         this.preloadResources();
     }
 
@@ -712,7 +705,6 @@ class PerformanceOptimizer {
     }
 
     preloadResources() {
-        // Preload critical fonts and assets
         const link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'font';
@@ -722,9 +714,7 @@ class PerformanceOptimizer {
     }
 }
 
-// === UTILITY FUNCTIONS ===
 const Utils = {
-    // Throttle function for performance
     throttle(func, limit) {
         let inThrottle;
         return function() {
@@ -738,18 +728,15 @@ const Utils = {
         }
     },
 
-    // Random number generator
     random(min, max) {
         return Math.random() * (max - min) + min;
     },
 
-    // Lerp function for smooth animations
     lerp(start, end, factor) {
         return start + (end - start) * factor;
     }
 };
 
-// === DARK MODE CONTROLLER ===
 class DarkModeController {
     constructor() {
         this.darkModeToggle = document.getElementById('darkModeToggle');
@@ -758,10 +745,8 @@ class DarkModeController {
     }
 
     init() {
-        // Set initial mode
         this.setMode(this.isDarkMode);
         
-        // Add event listener
         if (this.darkModeToggle) {
             this.darkModeToggle.addEventListener('click', () => {
                 this.toggleMode();
@@ -774,7 +759,6 @@ class DarkModeController {
         this.setMode(this.isDarkMode);
         localStorage.setItem('astra-dark-mode', this.isDarkMode);
         
-        // Smooth transition effect
         this.addTransitionEffect();
     }
 
@@ -791,7 +775,6 @@ class DarkModeController {
     }
 
     addTransitionEffect() {
-        // Create a smooth transition overlay
         const overlay = document.createElement('div');
         overlay.style.cssText = `
             position: fixed;
@@ -808,7 +791,6 @@ class DarkModeController {
         
         document.body.appendChild(overlay);
         
-        // Animate
         requestAnimationFrame(() => {
             overlay.style.opacity = '0.8';
             setTimeout(() => {
@@ -823,7 +805,6 @@ class DarkModeController {
     }
 }
 
-// === REAL CHATGPT-STYLE AI TERMINAL ===
 class RealAITerminal {
     constructor() {
         this.chatInput = document.getElementById('enhancedChatInput');
@@ -904,7 +885,6 @@ class RealAITerminal {
                 }
             });
             
-            // Real-time typing effects
             this.chatInput.addEventListener('input', () => {
                 this.addTypingEffect();
             });
@@ -915,7 +895,6 @@ class RealAITerminal {
         const message = this.chatInput.value.trim();
         if (message === '' || this.isTyping) return;
 
-        // Add user message with animation
         this.addUserMessage(message);
         this.chatInput.value = '';
 
@@ -924,7 +903,6 @@ class RealAITerminal {
     }
 
     addUserMessage(message) {
-        // Store message in conversation history
         this.conversationHistory.push(message);
         
         const messageDiv = document.createElement('div');
@@ -1231,7 +1209,6 @@ class CyberpunkHeroEffects {
         let trails = [];
         
         document.addEventListener('mousemove', (e) => {
-            // Create trail particles
             const trail = document.createElement('div');
             trail.className = 'cursor-particle';
             trail.style.cssText = `
@@ -1249,7 +1226,6 @@ class CyberpunkHeroEffects {
             cursorTrail.appendChild(trail);
             trails.push(trail);
             
-            // Animate and remove trail
             gsap.to(trail, {
                 scale: 0,
                 opacity: 0,
@@ -1262,7 +1238,6 @@ class CyberpunkHeroEffects {
                 }
             });
             
-            // Limit number of trails for performance
             if (trails.length > 20) {
                 const oldTrail = trails.shift();
                 if (oldTrail.parentNode) {
@@ -1328,7 +1303,6 @@ class CyberpunkHeroEffects {
     }
 
     initHeroAnimations() {
-        // Hero entrance animations
         const tl = gsap.timeline({ delay: 0.5 });
         
         tl.from('.holographic-logo', {
@@ -1370,15 +1344,11 @@ class CyberpunkHeroEffects {
     }
 }
 
-// === ADDITIONAL EFFECTS ===
 function initAdditionalEffects() {
-    // Matrix rain effect (optional)
     createMatrixRain();
     
-    // Glitch text effects
     addGlitchEffects();
     
-    // Hologram effects
     initHologramEffects();
 }
 
@@ -1457,12 +1427,10 @@ function initHologramEffects() {
     });
 }
 
-// === ERROR HANDLING ===
 window.addEventListener('error', (e) => {
     console.log('ASTRA System Error:', e.error);
 });
 
-// === CONSOLE EASTER EGG ===
 console.log(`
 %c
    █████╗ ███████╗████████╗██████╗  █████╗ 
@@ -1484,7 +1452,6 @@ console.log('%c> ASTRA.initialize()', 'color: #ff00ff; font-weight: bold;');
 console.log('%c< System ready. All modules loaded successfully.', 'color: #00ff00;');
 console.log('%c> Ready for the future...', 'color: #ffff00;');
 
-// Export for potential external use
 window.ASTRA = {
     version: '1.0.0',
     status: 'online',
