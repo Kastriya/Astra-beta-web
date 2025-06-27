@@ -1,0 +1,466 @@
+/* ASTRA Performance Optimized CSS Variables */
+:root {
+    /* Performance variables that can be modified by JavaScript */
+    --animation-duration: 0.3s;
+    --transition-duration: 0.3s;
+    --particle-count: 50;
+    --cursor-x: 0px;
+    --cursor-y: 0px;
+    --cursor-scale: 1;
+    --scroll-progress: 0;
+    
+    /* Color variables for better maintenance */
+    --primary-cyan: #00ffff;
+    --primary-magenta: #ff00ff;
+    --primary-yellow: #ffff00;
+    --bg-dark: #0a0a0a;
+    --bg-secondary: #1a1a2e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+}
+
+/* Performance optimizations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --animation-duration: 0s;
+        --transition-duration: 0s;
+    }
+    
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Mobile-first responsive typography */
+html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+    html { font-size: 16px; }
+}
+
+@media (min-width: 1024px) {
+    html { font-size: 18px; }
+}
+
+/* GPU acceleration for animation elements */
+.tech-card,
+.story-card,
+.contact-card,
+.timeline-card,
+.feature-card,
+.stat-card,
+.club-card,
+.nav-link,
+.btn-future,
+.loader {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Optimized transitions */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Connection-aware styles */
+.slow-connection .matrix-rain,
+.slow-connection .particles-js,
+.slow-connection .floating-elements,
+.slow-connection .tech-orb,
+.slow-connection .hologram-chip {
+    display: none !important;
+}
+
+.slow-connection .hero-video video {
+    display: none !important;
+}
+
+.slow-connection :root {
+    --particle-count: 10;
+    --animation-duration: 0.1s;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    :root {
+        --particle-count: 20;
+        --animation-duration: 0.2s;
+    }
+    
+    /* Disable expensive effects on mobile */
+    .matrix-rain::before,
+    .neon-grid,
+    .animated-gradient,
+    .floating-elements {
+        animation: none !important;
+    }
+    
+    /* Reduce shadow complexity */
+    .tech-card:hover,
+    .contact-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2) !important;
+    }
+    
+    /* Simplify gradients for better performance */
+    .gradient-text {
+        background: var(--primary-cyan) !important;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* Optimized font loading */
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Orbitron'), url('https://fonts.gstatic.com/s/orbitron/v29/yMJRMIlzdpvBhQQL_Qq7dys.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Orbitron Bold'), url('https://fonts.gstatic.com/s/orbitron/v29/yMJWMIlzdpvBhQQL_Qq7dysH3C9BxA.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: local('Orbitron Black'), url('https://fonts.gstatic.com/s/orbitron/v29/yMJWMIlzdpvBhQQL_Qq7dysH1ClBxA.woff2') format('woff2');
+}
+
+/* Critical path optimizations */
+.above-fold {
+    contain: layout style paint;
+}
+
+/* Lazy loading images */
+img[data-src] {
+    opacity: 0;
+    transition: opacity var(--transition-duration) ease;
+}
+
+img[data-src].loaded {
+    opacity: 1;
+}
+
+/* Optimized custom cursor */
+body::before {
+    content: '';
+    position: fixed;
+    top: var(--cursor-y);
+    left: var(--cursor-x);
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, var(--primary-cyan), var(--primary-magenta));
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%) scale(var(--cursor-scale));
+    transition: transform 0.1s ease;
+}
+
+/* Optimized animations using CSS custom properties */
+@keyframes optimized-float {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-10px) translateZ(0); }
+}
+
+@keyframes optimized-pulse {
+    0%, 100% { opacity: 1; transform: scale(1) translateZ(0); }
+    50% { opacity: 0.7; transform: scale(1.05) translateZ(0); }
+}
+
+@keyframes optimized-glow {
+    0%, 100% { box-shadow: 0 0 20px var(--primary-cyan); }
+    50% { box-shadow: 0 0 40px var(--primary-cyan), 0 0 60px var(--primary-cyan); }
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(var(--scroll-progress) * 100%);
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-magenta));
+    z-index: 10001;
+    transition: width 0.1s ease;
+}
+
+/* Optimized loading states */
+.loading-skeleton {
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.1) 25%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        rgba(255, 255, 255, 0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Performance budget helpers */
+.performance-warning {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    z-index: 10002;
+    display: none;
+}
+
+/* Critical CSS for above-the-fold content */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--bg-dark);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 5;
+    position: relative;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.main-title {
+    background: linear-gradient(45deg, var(--primary-cyan), var(--primary-magenta), var(--primary-yellow));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Navbar critical styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    z-index: 1000;
+    transition: all var(--transition-duration) ease;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-cyan);
+    text-shadow: 0 0 20px var(--primary-cyan);
+}
+
+/* Button critical styles */
+.btn-future {
+    position: relative;
+    background: linear-gradient(45deg, var(--primary-cyan), #0080ff);
+    border: none;
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all var(--transition-duration) ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.btn-future:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.7);
+}
+
+/* Accessibility improvements */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-cyan: #ffffff;
+        --text-secondary: #ffffff;
+        --text-muted: #cccccc;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .floating-elements,
+    .particles-js,
+    .matrix-rain,
+    .hero-video,
+    .background-effects {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Focus management for keyboard navigation */
+.nav-link:focus,
+.btn-future:focus,
+.contact-card:focus {
+    outline: 2px solid var(--primary-cyan);
+    outline-offset: 2px;
+}
+
+/* High performance layout */
+.section {
+    contain: layout style;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    contain: layout;
+}
+
+/* Optimized z-index stack */
+.loader { z-index: 10000; }
+.navbar { z-index: 1000; }
+.modal { z-index: 9999; }
+.cursor { z-index: 9998; }
+.hero-content { z-index: 5; }
+.background-effects { z-index: 1; }
+
+/* Performance monitoring styles */
+.performance-monitor {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--primary-cyan);
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.7rem;
+    z-index: 10003;
+    display: none;
+}
+
+.performance-monitor.show {
+    display: block;
+}
+
+/* Battery and network aware styles */
+@media (max-resolution: 1dppx) {
+    .high-res-only {
+        display: none;
+    }
+}
+
+/* Efficient text rendering */
+.optimized-text {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Content visibility optimization */
+.below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+}
+
+/* Intersection observer fallbacks */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Error boundary styles */
+.error-boundary {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-family: 'Orbitron', monospace;
+    margin-bottom: 1rem;
+}
+
+/* Service worker update notification */
+.sw-update-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-cyan);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 10004;
+    transform: translateY(100px);
+    transition: transform var(--transition-duration) ease;
+}
+
+.sw-update-notification.show {
+    transform: translateY(0);
+}

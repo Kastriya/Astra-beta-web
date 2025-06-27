@@ -4,13 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astra - Powering the Future</title>
+    
+    <!-- Performance optimizations -->
+    <meta name="description" content="ASTRA - An independent tech collective under Hack Club USA, pushing the limits of robotics and innovation. Join us in building the future!">
+    <meta name="keywords" content="ASTRA, Hack Club, Robotics, AI, Innovation, Technology, Programming, Space Tech">
+    <meta name="author" content="ASTRA Collective">
+    <meta name="robots" content="index, follow">
+    
+    <!-- PWA Meta tags -->
+    <meta name="theme-color" content="#00ffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ASTRA">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="performance-optimizations.js" as="script">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Load critical CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Load performance optimizations first -->
+    <script src="performance-optimizations.js"></script>
 </head>
 <body>
  
@@ -71,8 +101,12 @@
         <div class="light-sweep"></div>
       
         <div class="hero-video">
-            <video autoplay muted loop>
-                <source src="https://player.vimeo.com/external/372467553.hd.mp4?s=79bac0f4ad6ecb14eb8fefb4b36b9b7b8dd2c824&profile_id=175" type="video/mp4">
+            <video autoplay muted loop preload="none" poster="/images/hero-poster.jpg">
+                <source data-src="https://player.vimeo.com/external/372467553.hd.mp4?s=79bac0f4ad6ecb14eb8fefb4b36b9b7b8dd2c824&profile_id=175" type="video/mp4">
+                <!-- Fallback for unsupported video -->
+                <div class="video-fallback" style="background: linear-gradient(45deg, #0a0a0a, #1a1a2e); height: 100%; display: flex; align-items: center; justify-content: center; color: #00ffff; font-family: 'Orbitron', monospace;">
+                    🚀 ASTRA - The Future is Loading...
+                </div>
             </video>
         </div>
         
@@ -1426,7 +1460,43 @@
         <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
     </audio>
 
-    <script src="script.js"></script>
+    <!-- Load main script with defer for better performance -->
+    <script defer src="script.js"></script>
+    
+    <!-- Analytics and performance monitoring (load last) -->
+    <script>
+        // Web Vitals monitoring
+        if ('PerformanceObserver' in window) {
+            const observer = new PerformanceObserver((list) => {
+                list.getEntries().forEach((entry) => {
+                    console.log(`📊 ${entry.name}: ${entry.value}ms`);
+                });
+            });
+            observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+        }
+        
+        // Critical rendering path optimization
+        window.addEventListener('load', () => {
+            console.log('🚀 ASTRA fully loaded and optimized!');
+        });
+        
+        // Error tracking
+        window.addEventListener('error', (e) => {
+            console.error('🚨 Runtime error:', e.error);
+        });
+        
+        // Performance budget monitoring
+        if ('PerformanceObserver' in window) {
+            const perfObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.entryType === 'resource' && entry.transferSize > 100000) {
+                        console.warn(`⚠️ Large resource detected: ${entry.name} (${(entry.transferSize / 1024).toFixed(2)}KB)`);
+                    }
+                }
+            });
+            perfObserver.observe({ entryTypes: ['resource'] });
+        }
+    </script>
 </body>
 </html>
 
